@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="FakeDb\" />
+    <None Remove="Views\Author\" />
+    <None Remove="images\" />
+    <None Remove="Views\Book\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="FakeDb\" />
+    <Folder Include="Views\Author\" />
+    <Folder Include="images\" />
+    <Folder Include="Views\Book\" />
+  </ItemGroup>
+</Project>
