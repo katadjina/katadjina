@@ -1,0 +1,41 @@
+﻿@model IEnumerable<livres.Models.Author>
+@*why to use Ienumerable and not models.AuthorsDb*@
+
+
+<h2> Author List</h2>
+<a asp-action="Create" class="btn btn-outline-primary"> Add new author</a>
+@*//the above when clicked will redirect to Create action result
+//how does it know it s the action method of a*@
+
+<table class="table table-stripped">
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Birthdate</td>
+            <td>Action</td>
+
+        </tr>
+    </thead>
+<tbody>
+    @foreach(Author a in Model){
+            <tr>
+                <td>@a.Id</td>
+                <td>@a.Name</td>
+                <td>@a.BirthDate</td>
+            
+
+
+                <td>
+                    @*asp-action redirects to action method "Detil"*@
+                    @*asp-route-id passes a value -> in here we are using id*@ 
+                    <a asp-action="Details" asp-route-id="@a.Id" class="btn btn-outline-info">Details</a>
+                    <a asp-action="Update" asp-route-id="@a.Id" class="btn btn-outline-warning">Modify</a>
+                    <a asp-action="Delete" asp-route-id="@a.Id"class="btn btn-outline-danger">Delete</a>
+
+                </td>
+              </tr>
+            }
+
+</tbody>
+</table>

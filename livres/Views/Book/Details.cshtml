@@ -1,0 +1,30 @@
+﻿@using livres.FakeDb
+@model livres.Models.Livre
+
+
+<h2> Here are book details: </h2>
+
+
+<table class="table table-stripped">
+    <thead>
+        <tr>
+            <td>@Model.Id</td>
+            <td>@Model.Title</td>
+            <td>@Model.ISBN</td>
+            <td>@Model.idAuthor</td>
+        </tr>
+    </thead>
+</table>
+
+
+@*<div>
+    <h3> Other books by the same author </h3>
+    <hr />
+    @foreach (Livre b in BookDb.livres)
+    {
+            if(b.idAuthor ==)
+        <p> @b.Titre  </p>
+    }
+
+</div>*@
+

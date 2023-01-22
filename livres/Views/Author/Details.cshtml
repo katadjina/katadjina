@@ -1,0 +1,40 @@
+﻿@using livres.FakeDb
+@model livres.Models.Author
+
+
+<h2> Here are author details: </h2>
+
+
+
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Birthdate</td>
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr>
+            <td>@Model.Id</td>
+            <td>@Model.Name</td>
+            <td>@Model.BirthDate</td>
+        </tr>
+
+    </tbody>
+</table>
+
+
+@*it would be easy if i could use Ienumerable just like in the index A.M
+to display book titles + foreach to verify corresponding authors*@
+<div>
+    <h3> Author's 'Booklist:</h3>
+    <hr />
+    @foreach (Livre b in BookDb.livres)
+    {
+        <p> @b.Title  </p>
+    }
+
+</div>
+

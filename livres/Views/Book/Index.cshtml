@@ -1,0 +1,44 @@
+﻿@model IEnumerable<livres.Models.Livre>
+
+
+
+<h2> Book List</h2>
+<a asp-action="Create" class="btn btn-outline-primary"> Add new book</a>
+@*//the above when clicked will redirect to Create action result
+    //how does it know it s the action method of a*@
+
+<table class="table table-stripped">
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>Title</td>
+            <td>ISBN</td>
+            <td>Author's ID'</td>
+            <td>Action</td>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Livre l in Model)
+        {
+            <tr>
+                <td>@l.Id</td>
+                <td>@l.Title</td>
+                <td>@l.ISBN</td>
+                <td>@l.idAuthor</td>
+
+
+
+                <td>
+                    @*asp-action redirects to action method "Detil"*@
+                    @*asp-route-id passes a value -> in here we are using id*@
+                    <a asp-action="Details" asp-route-id="@l.Id" class="btn btn-outline-info">Details</a>
+                    <a class="btn btn-outline-warning">Modify</a>
+                    <a class="btn btn-outline-danger">Delete</a>
+
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>

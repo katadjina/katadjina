@@ -1,0 +1,27 @@
+﻿@model livres.Models.Author;
+
+
+<h2> Add new author</h2>
+
+<hr />
+<div class="row">
+    <div class="col-md-3">
+        <form asp-action="Create" >
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BirthDate" class="control-label"></label>
+                <input type="date" asp-for="BirthDate" class="form-control" />
+                <span asp-validation-for="BirthDate" class="text-danger"></span>
+            </div>
+            @*button:*@
+            <div class="fom-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
